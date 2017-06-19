@@ -1,11 +1,11 @@
 package com.peknight.math.collection;
 
+import com.peknight.common.collection.ArrayUtils;
+import com.peknight.math.factorial.Factorial;
+
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
-
-import com.peknight.common.collection.ArrayUtils;
-import com.peknight.math.factorial.Factorial;
 
 /**
  * 组合算法类
@@ -18,7 +18,8 @@ import com.peknight.math.factorial.Factorial;
  * 在总体数据量超级大的情况下，请使用bigCombination方法获取单条情况
  * 
  * @author Peknight
- * 
+ *
+ * 原创
  */
 public class Combination {
 	private Combination() {}
@@ -97,7 +98,7 @@ public class Combination {
 	public static int[][] combination(int[] data, int len) {
 		long count = countCombination(data.length, len);
 		if (count > Integer.MAX_VALUE) {
-			throw new RuntimeException("数据量超过Integer最大范围");
+			throw new IllegalArgumentException("数据量超过Integer最大范围");
 		}
 		int[][] combinationArrs = new int[(int) count][len];
 		for (int i = 0; i < count; i++) {
@@ -180,7 +181,7 @@ public class Combination {
 		int dataSize = data.size();
 		long count = countCombination(dataSize, len);
 		if (count > Integer.MAX_VALUE) {
-			throw new RuntimeException("数据量超过Integer最大范围");
+			throw new IllegalArgumentException("数据量超过Integer最大范围");
 		}
 		List<List<T>> combinationLists = new ArrayList<List<T>>((int) count);
 		for (int i = 0; i < (int) count; i++) {
@@ -262,7 +263,7 @@ public class Combination {
 	public static int[][] recursionCombination(int[] data, int len) {
 		long count = countCombination(data.length, len);
 		if (count > Integer.MAX_VALUE)
-			throw new RuntimeException("数据量超过Integer最大范围");
+			throw new IllegalArgumentException("数据量超过Integer最大范围");
 		int[][] combinationArr = new int[(int) count][len];
 		recursionCombination(combinationArr, data, len, 0, 0, 0);
 		return combinationArr;

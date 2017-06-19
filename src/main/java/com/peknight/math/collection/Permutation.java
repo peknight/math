@@ -1,11 +1,11 @@
 package com.peknight.math.collection;
 
+import com.peknight.common.collection.ArrayUtils;
+import com.peknight.math.factorial.Factorial;
+
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
-
-import com.peknight.common.collection.ArrayUtils;
-import com.peknight.math.factorial.Factorial;
 
 /**
  * 全排列算法类
@@ -19,6 +19,7 @@ import com.peknight.math.factorial.Factorial;
  * 
  * @author Peknight
  *
+ * 原创
  */
 public class Permutation {
 	
@@ -103,7 +104,7 @@ public class Permutation {
 	public static int[][] permutation(int[] data, int len) {
 		long count = countPermutation(data.length, len);
 		if (count > Integer.MAX_VALUE) {
-			throw new RuntimeException("数据量超过Integer最大范围");
+			throw new IllegalArgumentException("数据量超过Integer最大范围");
 		}
 		int[][] permutationArrs = new int[(int) count][len];
 		int[] mapping = getMapping(data);
@@ -203,7 +204,7 @@ public class Permutation {
 		int dataSize = data.size();
 		long count = countPermutation(dataSize, len);
 		if (count > Integer.MAX_VALUE) {
-			throw new RuntimeException("数据量超过Integer最大范围");
+			throw new IllegalArgumentException("数据量超过Integer最大范围");
 		}
 		List<List<T>> permutationLists = new ArrayList<List<T>>((int) count);
 		int[] mapping = getMapping(data);
@@ -296,7 +297,7 @@ public class Permutation {
 	public static int[][] recursionPermutation(int[] data, int len) {
 		long count = countPermutation(data.length, len);
 		if (count > Integer.MAX_VALUE) {
-			throw new RuntimeException("数据量超过Integer最大范围");
+			throw new IllegalArgumentException("数据量超过Integer最大范围");
 		}
 		int[][] permutationArr = new int[(int) count][len];
 		recursionPermutation(permutationArr, data, len, 0, 0);
