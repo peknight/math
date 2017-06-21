@@ -28,6 +28,12 @@
 
 	<dependencies>
 		<dependency>
+			<groupId>com.peknight</groupId>
+			<artifactId>common</artifactId>
+			<version>${pek.common.version}</version>
+		</dependency>
+
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>
 		</dependency>
@@ -36,11 +42,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>com.peknight</groupId>
-			<artifactId>common</artifactId>
-			<version>${pek.common.version}</version>
 		</dependency>
 	</dependencies>
 
