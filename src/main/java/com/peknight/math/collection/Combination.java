@@ -48,7 +48,7 @@ public class Combination {
 	private Combination() {}
 	/** 计算组合数 */
 	public static long countCombination(int n, int m) {
-		return Factorial.factorial(n, n-m+1)/ Factorial.factorial(m);
+		return Factorial.factorial(n, n-m+1) / Factorial.factorial(m);
 	}
 	
 	/** 计算组合数(数据较大时使用) */
